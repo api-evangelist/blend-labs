@@ -1,0 +1,41 @@
+generated: '2026-07-18'
+method: searched
+source: https://developers.blend.com/blend/reference/create-oauth-token
+docs: https://developers.blend.com/blend/docs
+summary:
+  types: [oauth2, http-bearer, http-basic]
+  tenant_header: blend-target-instance
+  notes: >-
+    Every Blend API request requires the multi-tenant blend-target-instance header
+    (form "[tenant]~[special instance id]") in addition to one credential scheme
+    (OAuth bearer token, HTTP bearer, or HTTP basic). The blend-target-instance header
+    replaced deprecated tenant headers effective 2020-10-31.
+schemes:
+- name: OAuthToken
+  type: oauth2
+  flow: clientCredentials
+  token_operation: create-oauth-token
+  token_note: >-
+    POST to the Create OAuth Token endpoint with a client ID and password to mint a
+    bearer token used to authenticate subsequent requests.
+  source: https://developers.blend.com/blend/reference/create-oauth-token
+- name: BearerAuth
+  type: http
+  scheme: bearer
+  source: https://developers.blend.com/blend/reference/get-application-data
+- name: BasicAuth
+  type: http
+  scheme: basic
+  source: https://developers.blend.com/blend/reference/get-application-data
+required_headers:
+- name: blend-target-instance
+  in: header
+  required: true
+  description: >-
+    Multi-tenant target instance selector, format "[tenant]~[special instance id]".
+    Mandatory on all API routes.
+environments:
+- name: production
+  base_url: https://api.blendlabs.com
+- name: beta
+  base_url: https://api.beta.blendlabs.com
