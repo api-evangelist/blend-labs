@@ -1,0 +1,357 @@
+generated: '2026-07-18'
+method: derived
+status: candidate
+source: llms/blend-labs-llms.txt
+note: >-
+  Candidate MCP tool list derived one-to-one from Blend's published API reference
+  operations. No official hosted/remote Blend MCP server was found as of the generated
+  date. source_operation points at the public reference page for each operation.
+server:
+  name: blend
+  transport: http
+  status: candidate
+  base_url: https://api.blendlabs.com
+  auth: OAuth bearer or HTTP basic + blend-target-instance tenant header
+tools:
+- name: get_intent_to_proceed
+  description: "Get Intent to Proceed (ITP) data. This endpoint will return information about the state of ITP on an application once the ITP workflow has been added or ITP has been given."
+  source_operation: https://developers.blend.com/blend/reference/get-intent-to-proceed
+- name: post_intent_to_proceed
+  description: "Post Intent to Proceed (ITP). This endpoint will add an ITP workflow to the specified borrower on an application, or mark ITP as complete if `givenAt` is supplied. Returns 409 Conflict if ITP workflow already exists for the specified `bo..."
+  source_operation: https://developers.blend.com/blend/reference/post-intent-to-proceed
+- name: get_los_milestone
+  description: "Get the current los milestone on the loan"
+  source_operation: https://developers.blend.com/blend/reference/get-los-milestone
+- name: patch_los_milestone
+  description: "Update the los milestone on a loan"
+  source_operation: https://developers.blend.com/blend/reference/patch-los-milestone
+- name: get_export_statuses
+  description: "Get Export Statuses"
+  source_operation: https://developers.blend.com/blend/reference/get-export-statuses
+- name: get_application_parties
+  description: "Get a list of all parties on the application (with their econsent status)"
+  source_operation: https://developers.blend.com/blend/reference/get-application-parties
+- name: list_the_assigned_users_on_an_application
+  description: "Current Assignment"
+  source_operation: https://developers.blend.com/blend/reference/list-the-assigned-users-on-an-application
+- name: patch_the_assigned_users_on_an_application
+  description: "Add Assignees"
+  source_operation: https://developers.blend.com/blend/reference/patch-the-assigned-users-on-an-application
+- name: override_all_current_assignees_on_an_application
+  description: "Set / Overwrite Assignees"
+  source_operation: https://developers.blend.com/blend/reference/override-all-current-assignees-on-an-application
+- name: get_application_underwriting_results
+  description: "Get a list of all underwriting results on the application"
+  source_operation: https://developers.blend.com/blend/reference/get-application-underwriting-results
+- name: export_application_data
+  description: "Return the entire MISMO 3.3.1 or Fannie 3.2 file for this application."
+  source_operation: https://developers.blend.com/blend/reference/export-application-data
+- name: get_verified_employers
+  description: "Gets a summary of verified employers data for an Application"
+  source_operation: https://developers.blend.com/blend/reference/get-verified-employers
+- name: post_employers_reverify
+  description: "Initiates an asynchronous attempt to reverify employers for the specified application and employers."
+  source_operation: https://developers.blend.com/blend/reference/post-employers-reverify
+- name: post_home_lending_application
+  description: "Create a new application in Blend with minimal borrower and application data. This endpoint is usually used to create applications in Blend from CRMs or other central borrower databases."
+  source_operation: https://developers.blend.com/blend/reference/post-home-lending-application
+- name: get_home_lending_applications
+  description: "Get a paginated list of active applications sorted by creation date descending. This endpoint also supports a few filtering parameters."
+  source_operation: https://developers.blend.com/blend/reference/get-home-lending-applications
+- name: patch_application
+  description: "Update properties on a specific loan."
+  source_operation: https://developers.blend.com/blend/reference/patch-application
+- name: get_application_data
+  description: "Get application summary in JSON."
+  source_operation: https://developers.blend.com/blend/reference/get-application-data
+- name: delete_application_data
+  description: "Delete an application"
+  source_operation: https://developers.blend.com/blend/reference/delete-application-data
+- name: get_application_documents
+  description: "Get a list of all the uploaded and signature complete documents on a specific application, ordered by document creation date."
+  source_operation: https://developers.blend.com/blend/reference/get-application-documents
+- name: get_borrower_positions
+  description: "Get the list of borrower pairs on the application"
+  source_operation: https://developers.blend.com/blend/reference/get-borrower-positions
+- name: put_borrower_positions
+  description: "Update the location of borrowers on the application (by 1003/borrower pairing and location in the borrower pair)"
+  source_operation: https://developers.blend.com/blend/reference/put-borrower-positions
+- name: post_export_status
+  description: "Update export status on an application"
+  source_operation: https://developers.blend.com/blend/reference/post-export-status
+- name: post_los_milestones
+  description: "Bulk update a list of applications to be on specific los milestones"
+  source_operation: https://developers.blend.com/blend/reference/post-los-milestones
+- name: put_product_on_loan
+  description: "Put a priced product on a loan"
+  source_operation: https://developers.blend.com/blend/reference/put-product-on-loan
+- name: post_lender_take_over
+  description: "Post Lender Take Over action on an Application"
+  source_operation: https://developers.blend.com/blend/reference/post-lender-take-over
+- name: post_application_export
+  description: "Initiate an asynchronous application export"
+  source_operation: https://developers.blend.com/blend/reference/post-application-export
+- name: get_export_requests
+  description: "Get all export requests for a given application"
+  source_operation: https://developers.blend.com/blend/reference/get-export-requests
+- name: get_export_request
+  description: "Get a single export request for a given application"
+  source_operation: https://developers.blend.com/blend/reference/get-export-request
+- name: patch_export_request
+  description: "Patch the status of an export request"
+  source_operation: https://developers.blend.com/blend/reference/patch-export-request
+- name: get_title_orders_for_an_application
+  description: "Looks up active Title orders. Only applicable for customers with Title Exchange enabled."
+  source_operation: https://developers.blend.com/blend/reference/get-title-orders-for-an-application
+- name: get_application_activities
+  description: "Get a paginated list of activities for a loan application"
+  source_operation: https://developers.blend.com/blend/reference/get-application-activities
+- name: create_or_update_party_closing_schedule_details
+  description: "This endpoint creates a closing appointment for a specified party for a closing/loan. The user needs to create a closing and set closingType, closingDate (scheduledCeremonyTime) and timezone to the closing. These fields can be added usin..."
+  source_operation: https://developers.blend.com/blend/reference/create-or-update-party-closing-schedule-details
+- name: get_specific_party_closing_schedule_details
+  description: "Returns closing schedule details for a specified party on the loan"
+  source_operation: https://developers.blend.com/blend/reference/get-specific-party-closing-schedule-details
+- name: get_all_closing_schedule_details_for_the_loan
+  description: "Returns closing schedule details for borrower parties on the loan"
+  source_operation: https://developers.blend.com/blend/reference/get-all-closing-schedule-details-for-the-loan
+- name: get_loans_report
+  description: "Return a paginated list of loans data."
+  source_operation: https://developers.blend.com/blend/reference/get-loans-report
+- name: get_borrowers_report
+  description: "Return a paginated list of borrower data."
+  source_operation: https://developers.blend.com/blend/reference/get-borrowers-report
+- name: get_lenders_report
+  description: "Return a paginated list of lenders data."
+  source_operation: https://developers.blend.com/blend/reference/get-lenders-report
+- name: get_activities_report
+  description: "This captures only the borrower's activity within Blend on the process-level."
+  source_operation: https://developers.blend.com/blend/reference/get-activities-report
+- name: get_nps_report
+  description: "Return a paginated list of nps data."
+  source_operation: https://developers.blend.com/blend/reference/get-nps-report
+- name: get_documents_report
+  description: "Return a paginated list of documents data."
+  source_operation: https://developers.blend.com/blend/reference/get-documents-report
+- name: get_data_verification_usage_report
+  description: "Returns a paginated list of connectivity metrics data."
+  source_operation: https://developers.blend.com/blend/reference/get-data-verification-usage-report
+- name: get_follow_ups_report
+  description: "Return a paginated list of individual follow-up data."
+  source_operation: https://developers.blend.com/blend/reference/get-follow-ups-report
+- name: get_lender_pab_activities_report
+  description: "Return a paginated list of PAB Activities"
+  source_operation: https://developers.blend.com/blend/reference/get-lender-pab-activities-report
+- name: get_deposit_account_applications
+  description: "Return a paginated list of Deposit Account Applications"
+  source_operation: https://developers.blend.com/blend/reference/get-deposit-account-applications
+- name: get_configurable_products_applications
+  description: "Returns a paginated list of configurable products applications"
+  source_operation: https://developers.blend.com/blend/reference/get-configurable-products-applications
+- name: get_configurable_products_application_node_instances
+  description: "Returns a paginated list of page instances created/viewed by applicants, for applications created on the Blend configurable platform."
+  source_operation: https://developers.blend.com/blend/reference/get-configurable-products-application-node-instances
+- name: get_deposit_account_fundings
+  description: "Returns a paginated list of funding objects created for transfering funds to a new destination account booked using a Consumer Deposit Account application."
+  source_operation: https://developers.blend.com/blend/reference/get-deposit-account-fundings
+- name: get_deposit_account_products
+  description: "Returns a paginated list of product or account objects added to a Consumer Deposit Account application. This includes products added to an application regardless of the outcome of the application (i.e unbooked products will be included)"
+  source_operation: https://developers.blend.com/blend/reference/get-deposit-account-products
+- name: get_closings
+  description: "Returns a list of all closings for a given application."
+  source_operation: https://developers.blend.com/blend/reference/get-closings
+- name: post_closings
+  description: "Creates a new closing for a given application."
+  source_operation: https://developers.blend.com/blend/reference/post-closings
+- name: put_closings
+  description: "Update closing for a specific applicationId. A new closing is created if it does not exist."
+  source_operation: https://developers.blend.com/blend/reference/put-closings
+- name: get_closing
+  description: "Returns the specified closing."
+  source_operation: https://developers.blend.com/blend/reference/get-closing
+- name: patch_closing
+  description: "Updates a closing for a given loan. This endpoint can update multiple elements at once."
+  source_operation: https://developers.blend.com/blend/reference/patch-closing
+- name: put_closing_documents
+  description: "Adds documents to a closing or updates their metadata, like their closing designation."
+  source_operation: https://developers.blend.com/blend/reference/put-closing-documents
+- name: delete_closing_documents
+  description: "Remove documents from a closing."
+  source_operation: https://developers.blend.com/blend/reference/delete-closing-documents
+- name: post_closing_enote
+  description: "Creates an eNote for a closing."
+  source_operation: https://developers.blend.com/blend/reference/post-closing-enote
+- name: delete_closing_enote
+  description: "Removes the eNote from the Closing to make way for a paper note."
+  source_operation: https://developers.blend.com/blend/reference/delete-closing-enote
+- name: post_closing_send
+  description: "Submits or Resubmits a closing."
+  source_operation: https://developers.blend.com/blend/reference/post-closing-send
+- name: post_closing_redraw
+  description: "Places submitted closing back into a draft state so that changes can be made."
+  source_operation: https://developers.blend.com/blend/reference/post-closing-redraw
+- name: put_pre_closing_documents
+  description: "Adds draft pre-closing documents to a closing or updates their document type if it has changed since their last addition. After successful completion of this request, the document references that were added to this closing will have a `c..."
+  source_operation: https://developers.blend.com/blend/reference/put-pre-closing-documents
+- name: post_pre_closing_documents_send
+  description: "Moves any pre-closing documents out of a draft state and sends them to the settlement agent."
+  source_operation: https://developers.blend.com/blend/reference/post-pre-closing-documents-send
+- name: post_external_enote
+  description: "Adds an ENote from a vault managed outside of blend."
+  source_operation: https://developers.blend.com/blend/reference/post-external-enote
+- name: retrieve_full_ron_eligibility_object
+  description: "Retrieves state, jurisdiction (county) and underwriter RON eligibility information for provided property address."
+  source_operation: https://developers.blend.com/blend/reference/retrieve-full-ron-eligibility-object
+- name: get_remote_online_notary_session_recording_file_ids
+  description: "Returns an array of published file IDs for RON session video recording(s) associated with an application."
+  source_operation: https://developers.blend.com/blend/reference/get-remote-online-notary-session-recording-file-ids
+- name: get_remote_online_notary_session_recording_download_url_1
+  description: "Returns a limited time URL to download the RON recording associated with a file ID."
+  source_operation: https://developers.blend.com/blend/reference/get-remote-online-notary-session-recording-download-url-1
+- name: get_consumer_lending_application_data
+  description: "Get consumer lending application data in JSON."
+  source_operation: https://developers.blend.com/blend/reference/get-consumer-lending-application-data
+- name: patch_consumer_lending_application
+  description: "Update some properties on a specific consumer lending application."
+  source_operation: https://developers.blend.com/blend/reference/patch-consumer-lending-application
+- name: get_consumer_lending_application_documents
+  description: "Get a list of all the uploaded and signature complete documents on a specific application."
+  source_operation: https://developers.blend.com/blend/reference/get-consumer-lending-application-documents
+- name: get_application_decision
+  description: "Get decision for a specific application."
+  source_operation: https://developers.blend.com/blend/reference/get-application-decision
+- name: set_application_decision
+  description: "Send decision information to Blend"
+  source_operation: https://developers.blend.com/blend/reference/set-application-decision
+- name: get_verified_income_data
+  description: "Get verified income data for a party."
+  source_operation: https://developers.blend.com/blend/reference/get-verified-income-data
+- name: post_income_verification
+  description: "Based on the operation selected, this API runs through the income verification waterfall."
+  source_operation: https://developers.blend.com/blend/reference/post-income-verification
+- name: get_income_verification_status
+  description: "Get status of income verification."
+  source_operation: https://developers.blend.com/blend/reference/get-income-verification-status
+- name: create_oauth_token
+  description: "Creates a new OAuth Token for use in authenticating requests given a client ID and password"
+  source_operation: https://developers.blend.com/blend/reference/create-oauth-token
+- name: get_current_user
+  description: "Get Current User"
+  source_operation: https://developers.blend.com/blend/reference/get-current-user
+- name: get_documents
+  description: "Get a paginated list of documents"
+  source_operation: https://developers.blend.com/blend/reference/get-documents
+- name: post_document
+  description: "Upload a loan document"
+  source_operation: https://developers.blend.com/blend/reference/post-document
+- name: get_document
+  description: "Download document"
+  source_operation: https://developers.blend.com/blend/reference/get-document
+- name: patch_document_data
+  description: "Upate a document's export status"
+  source_operation: https://developers.blend.com/blend/reference/patch-document-data
+- name: get_document_export_statuses
+  description: "Get all export statuses of the document"
+  source_operation: https://developers.blend.com/blend/reference/get-document-export-statuses
+- name: get_document_metadata
+  description: "Get all metadata associated with a document"
+  source_operation: https://developers.blend.com/blend/reference/get-document-metadata
+- name: get_follow_ups
+  description: "Get follow-ups on a specific application."
+  source_operation: https://developers.blend.com/blend/reference/get-follow-ups
+- name: post_follow_up
+  description: "Create a follow-up for an applicant on a specific application."
+  source_operation: https://developers.blend.com/blend/reference/post-follow-up
+- name: get_follow_up
+  description: "Get specific follow-up."
+  source_operation: https://developers.blend.com/blend/reference/get-follow-up
+- name: remove_a_specific_follow_up
+  description: "Delete specific follow-up."
+  source_operation: https://developers.blend.com/blend/reference/remove-a-specific-follow-up
+- name: patch_follow_up
+  description: "Update specific follow-up."
+  source_operation: https://developers.blend.com/blend/reference/patch-follow-up
+- name: get_assets
+  description: "Gets a summary of Assets data for an Application"
+  source_operation: https://developers.blend.com/blend/reference/get-assets
+- name: post_assets_refresh
+  description: "Initiates an asynchronous attempt to refresh Assets data for the specified application and accounts. Refreshes can only be initiated once per hour for an application. Refreshes can take up to 20 minutes to complete."
+  source_operation: https://developers.blend.com/blend/reference/post-assets-refresh
+- name: get_tax_transcripts
+  description: "Gets Tax Transcripts structured data for a particular 4506T document"
+  source_operation: https://developers.blend.com/blend/reference/get-tax-transcripts
+- name: post_lenders
+  description: "Bulk route used to create Lender Users in Blend"
+  source_operation: https://developers.blend.com/blend/reference/post-lenders
+- name: query_lenders
+  description: "Get a paginated list of all Lender Users in the Blend account"
+  source_operation: https://developers.blend.com/blend/reference/query-lenders
+- name: delete_lenders
+  description: "Bulk endpoint to remove one or more lender users from the Blend account"
+  source_operation: https://developers.blend.com/blend/reference/delete-lenders
+- name: patch_lenders
+  description: "Bulk endpoint to update some information on an array of lender users"
+  source_operation: https://developers.blend.com/blend/reference/patch-lenders
+- name: post_parties
+  description: "Add a party to a specific loan. You can only add third party recipients through this endpoint."
+  source_operation: https://developers.blend.com/blend/reference/post-parties
+- name: patch_party
+  description: "Update a party's details."
+  source_operation: https://developers.blend.com/blend/reference/patch-party
+- name: delete_party
+  description: "Delete party from a specific loan."
+  source_operation: https://developers.blend.com/blend/reference/delete-party
+- name: get_party_employers
+  description: "Get details about party employers."
+  source_operation: https://developers.blend.com/blend/reference/get-party-employers
+- name: post_party_employers
+  description: "Create employers and incomes for party."
+  source_operation: https://developers.blend.com/blend/reference/post-party-employers
+- name: post_party_other_incomes
+  description: "Create other incomes for party."
+  source_operation: https://developers.blend.com/blend/reference/post-party-other-incomes
+- name: post_realtor
+  description: "Add realtor to loan application"
+  source_operation: https://developers.blend.com/blend/reference/post-realtor
+- name: get_account_opening_application_data
+  description: "Get JSON object containing application data for account opening."
+  source_operation: https://developers.blend.com/blend/reference/get-account-opening-application-data
+- name: patch_account_opening_application
+  description: "Update application data."
+  source_operation: https://developers.blend.com/blend/reference/patch-account-opening-application
+- name: get_login_attempts
+  description: "Get a paginated list of login attempts. Only applicable to consumer SSO login attempts."
+  source_operation: https://developers.blend.com/blend/reference/get-login-attempts
+- name: get_login_attempt
+  description: "Get a specific login attempt. Only applicable to consumer SSO login attempts."
+  source_operation: https://developers.blend.com/blend/reference/get-login-attempt
+- name: post_a_package
+  description: "Post a package to an application."
+  source_operation: https://developers.blend.com/blend/reference/post-a-package
+- name: retrieve_all_packages_for_an_application
+  description: "Retrieve all packages for an application. Optional query parameters available to filter."
+  source_operation: https://developers.blend.com/blend/reference/retrieve-all-packages-for-an-application
+- name: issue_a_draft_package_or_retry_issuing_a_package
+  description: "Issue a draft package or retry issuing a package"
+  source_operation: https://developers.blend.com/blend/reference/issue-a-draft-package-or-retry-issuing-a-package
+- name: retrieve_a_package
+  description: "Retrieve details about a package"
+  source_operation: https://developers.blend.com/blend/reference/retrieve-a-package
+- name: update_a_package
+  description: "Update a package to CANCELLED status, set a papered at date, set/update a due date or set/update a expiry date"
+  source_operation: https://developers.blend.com/blend/reference/update-a-package
+- name: markpackageexternalsignaturescomplete
+  description: "Records that document signatures have been collected externally for a package. Marks all recipients in the external fulfillment envelope as signed. This is idempotent and can be called multiple times safely. **Use case:** Integration wit..."
+  source_operation: https://developers.blend.com/blend/reference/markpackageexternalsignaturescomplete
+- name: get_events
+  description: "Returns a list of events for the given query parameters with a maximum of 250 events per call."
+  source_operation: https://developers.blend.com/blend/reference/get-events
+- name: get_event
+  description: "Get an event and its current status"
+  source_operation: https://developers.blend.com/blend/reference/get-event
+- name: set_event_status
+  description: "Set a status for an event"
+  source_operation: https://developers.blend.com/blend/reference/set-event-status
+- name: get_event_description
+  description: "Get the set of all events available in the provided version, their available decorators, and optionally their schemas."
+  source_operation: https://developers.blend.com/blend/reference/get-event-description

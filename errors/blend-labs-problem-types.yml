@@ -1,0 +1,18 @@
+generated: '2026-07-18'
+method: searched
+source: https://developers.blend.com/blend/reference
+format: http-status
+note: >-
+  Blend conveys API errors via HTTP status codes. Blend does not publish an RFC 9457
+  problem+json registry; the entries below are the error conditions explicitly documented
+  in the API reference. HTTP 4xx/5xx semantics apply generally. No error catalog was
+  fabricated beyond documented conditions.
+problems:
+- status: 409
+  title: Conflict
+  condition: >-
+    Returned by Post Intent to Proceed when an ITP workflow already exists for the
+    specified borrowerId, or if ITP has already been given on the application the
+    borrowerId belongs to.
+  source_operation: post-intent-to-proceed
+  url: https://developers.blend.com/blend/reference/post-intent-to-proceed

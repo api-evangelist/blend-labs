@@ -1,0 +1,40 @@
+generated: '2026-07-18'
+method: searched
+source: https://developers.blend.com/blend/docs
+spec_type: Webhooks
+surface: Event Notifications
+description: >-
+  Blend publishes an Event Notifications surface for asynchronous state changes across
+  the lending lifecycle. Consumers query and manage events via the Events API and/or
+  receive notifications. Events follow two published schema patterns and use ISO 8601
+  timestamps. No standalone AsyncAPI document is published; this captures the webhook/
+  event catalog as documented.
+patterns:
+- name: CRUD Notification Schema
+  description: Standard schema for create/update/delete state changes.
+- name: Special Trigger Schema
+  description: Schema for specialized trigger events.
+timestamps: ISO 8601
+operations:
+- id: get-events
+  title: Get Events
+  description: Returns a list of events for the given query parameters, max 250 events per call.
+  url: https://developers.blend.com/blend/reference/get-events
+- id: get-event
+  title: Get Event
+  description: Get an event and its current status.
+  url: https://developers.blend.com/blend/reference/get-event
+- id: set-event-status
+  title: Set Event Status
+  description: Set a status for an event.
+  url: https://developers.blend.com/blend/reference/set-event-status
+- id: get-event-description
+  title: Get Event Description
+  description: >-
+    Get the set of all events available in the provided version, their available
+    decorators, and optionally their schemas.
+  url: https://developers.blend.com/blend/reference/get-event-description
+docs:
+- topic: Event Notifications
+  covers: [structure, headers, error handling, schemas]
+  url: https://developers.blend.com/blend/docs

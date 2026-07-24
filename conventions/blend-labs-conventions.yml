@@ -1,0 +1,56 @@
+generated: '2026-07-18'
+method: searched
+source: https://developers.blend.com/blend/docs
+docs: https://developers.blend.com/blend/reference
+authentication:
+  style: oauth-token-or-bearer-or-basic
+  tenant_header: blend-target-instance
+  ref: authentication/blend-labs-authentication.yml
+versioning:
+  scheme: semantic-major
+  current: v12.0.0
+  latest_published: v13.0.0
+  mechanism: >-
+    Major API versions (v1.3.0 through v13.0.0) are published with dated upgrade guides
+    and a changelog. Consumers pin a version and migrate per the upgrade guides.
+  changelog: https://developers.blend.com/blend/changelog
+  upgrade_guides:
+  - https://developers.blend.com/blend/docs/v800-upgrade-guide
+  - https://developers.blend.com/blend/docs/v900-upgrade-guide
+  - https://developers.blend.com/blend/docs/v1000-upgrade-guide
+pagination:
+  style: cursor-and-page
+  note: >-
+    List and report endpoints return paginated results (e.g. "Get a paginated list of
+    active applications sorted by creation date descending"). Report endpoints and the
+    Events endpoint cap page size (Events returns a maximum of 250 events per call).
+timestamps:
+  format: ISO 8601
+  note: Event and resource timestamps standardized on ISO format.
+events:
+  surface: Event Notifications
+  patterns:
+  - CRUD Notification Schema
+  - Special Trigger Schema
+  ref: asyncapi/blend-labs-events-webhooks.yml
+export_formats:
+- MISMO 3.3.1
+- Fannie 3.2
+idempotency:
+  documented: partial
+  note: >-
+    Blend documents idempotent behavior on specific operations (e.g. "Mark external
+    signatures as complete for a package" is explicitly idempotent and safe to call
+    multiple times), but does not publish a global request-level Idempotency-Key header
+    contract. No provider-wide idempotency-key convention was found; not asserted.
+error_envelope:
+  note: >-
+    HTTP status codes convey outcomes (e.g. 409 Conflict when an ITP workflow already
+    exists). See errors/blend-labs-problem-types.yml.
+  ref: errors/blend-labs-problem-types.yml
+integration_guides:
+- CRM
+- Lead Generation
+- LOS (Loan Origination System)
+- VOA/VOE/VOI (verification of assets/employment/income)
+- SSO / Consumer SSO

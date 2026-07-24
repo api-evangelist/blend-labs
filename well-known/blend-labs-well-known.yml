@@ -1,0 +1,34 @@
+generated: '2026-07-18'
+method: searched
+source: live probes of /.well-known/* on Blend hosts
+note: >-
+  No /.well-known/ discovery documents were served. The production API host
+  (api.blendlabs.com) did not return HTTP for these paths and the developer portal
+  (developers.blend.com) is a ReadMe single-page app that returns the app shell for
+  unknown paths. Absence is a valid, expected result — no raw files saved.
+hosts:
+- host: https://api.blendlabs.com
+  documents:
+  - path: /.well-known/security.txt
+    status: no-response
+  - path: /.well-known/openid-configuration
+    status: no-response
+  - path: /.well-known/oauth-authorization-server
+    status: no-response
+  - path: /.well-known/api-catalog
+    status: no-response
+  - path: /.well-known/ai-plugin.json
+    status: no-response
+- host: https://developers.blend.com
+  documents:
+  - path: /.well-known/security.txt
+    status: spa-shell
+  - path: /.well-known/openid-configuration
+    status: spa-shell
+  - path: /.well-known/oauth-authorization-server
+    status: spa-shell
+  - path: /.well-known/api-catalog
+    status: spa-shell
+  - path: /.well-known/ai-plugin.json
+    status: spa-shell
+documents: []

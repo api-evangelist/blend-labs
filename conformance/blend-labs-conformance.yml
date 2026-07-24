@@ -1,0 +1,32 @@
+generated: '2026-07-18'
+method: searched
+source: https://developers.blend.com/blend/reference
+standards:
+- id: oauth2
+  conforms: true
+  evidence: >-
+    Create OAuth Token endpoint mints bearer tokens from a client ID + password
+    (client-credentials style); requests authenticate with OAuth bearer tokens.
+- id: mismo-3.3.1
+  conforms: true
+  evidence: >-
+    Export Application Data returns the full MISMO 3.3.1 file for an application.
+- id: fannie-3.2
+  conforms: true
+  evidence: Export Application Data can return the Fannie 3.2 file for an application.
+- id: iso8601-timestamps
+  conforms: true
+  evidence: Event and resource timestamps standardized on ISO 8601 format.
+- id: urla
+  conforms: true
+  evidence: >-
+    Beta environments support Uniform Residential Loan Application (URLA / 1003)
+    testing; borrower-pair (1003) positioning is a first-class concept.
+- id: remote-online-notarization
+  conforms: true
+  evidence: >-
+    RON eligibility, RON session recording retrieval, and eNote endpoints support
+    remote online notarization closings.
+- id: rfc9457-problem-details
+  conforms: false
+  evidence: Errors are conveyed via HTTP status codes; no problem+json registry published.

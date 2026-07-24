@@ -1,0 +1,22 @@
+generated: '2026-07-18'
+method: searched
+source: https://developers.blend.com/blend/docs
+description: >-
+  Blend provides a separate beta environment for integration testing, distinct from
+  production. Beta was introduced for new URLA testing (October 2019) ahead of GSE
+  production timelines. No public self-serve test cards/credentials are published; access
+  is provisioned per tenant. Test-vs-live is selected by base host plus the
+  blend-target-instance tenant header.
+environments:
+- name: beta
+  base_url: https://api.beta.blendlabs.com
+  purpose: Integration testing (e.g. URLA/1003 testing).
+- name: production
+  base_url: https://api.blendlabs.com
+  purpose: Live.
+tenant_selector:
+  header: blend-target-instance
+  format: "[tenant]~[special instance id]"
+notes: >-
+  Test credentials and target-instance identifiers are provisioned to integrators by
+  Blend; no published magic test values. Never fabricate test data.

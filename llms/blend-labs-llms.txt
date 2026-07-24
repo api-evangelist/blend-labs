@@ -1,0 +1,132 @@
+# Blend API Docs Documentation
+
+> Documentation for Blend API Docs
+
+## Guides
+- [v8.0.0 Upgrade Guide](https://developers.blend.com/blend/docs/v800-upgrade-guide.md)
+- [v9.0.0 Upgrade Guide](https://developers.blend.com/blend/docs/v900-upgrade-guide.md)
+- [v10.0.0 Upgrade Guide](https://developers.blend.com/blend/docs/v1000-upgrade-guide.md)
+
+## API Reference
+- [Get Intent to Proceed](https://developers.blend.com/blend/reference/get-intent-to-proceed.md): Get Intent to Proceed (ITP) data. This endpoint will return information about the state of ITP on an application once the ITP workflow has been added or ITP has been given.
+- [Post Intent to Proceed](https://developers.blend.com/blend/reference/post-intent-to-proceed.md): Post Intent to Proceed (ITP). This endpoint will add an ITP workflow to the specified borrower on an application, or mark ITP as complete if `givenAt` is supplied. Returns 409 Conflict if ITP workflow already exists for the specified `borrowerId`, or if ITP has already been given on the application `borrowerId` belongs to.
+- [Get Los Milestone](https://developers.blend.com/blend/reference/get-los-milestone.md): Get the current los milestone on the loan
+- [Patch Los Milestone](https://developers.blend.com/blend/reference/patch-los-milestone.md): Update the los milestone on a loan
+- [Get Export Statuses](https://developers.blend.com/blend/reference/get-export-statuses.md): Get Export Statuses
+- [List Parties for an Application](https://developers.blend.com/blend/reference/get-application-parties.md): Get a list of all parties on the application (with their econsent status)
+- [List the Assigned Users on an Application](https://developers.blend.com/blend/reference/list-the-assigned-users-on-an-application.md): Current Assignment
+- [Patch the Assigned Users on an Application](https://developers.blend.com/blend/reference/patch-the-assigned-users-on-an-application.md): Add Assignees
+- [Override All Current Assignees on an Application](https://developers.blend.com/blend/reference/override-all-current-assignees-on-an-application.md): Set / Overwrite Assignees
+- [Get Application Underwriting Results](https://developers.blend.com/blend/reference/get-application-underwriting-results.md): Get a list of all underwriting results on the application
+- [Export Application Data](https://developers.blend.com/blend/reference/export-application-data.md): Return the entire MISMO 3.3.1 or Fannie 3.2 file for this application.
+- [Get verified employers from an Application](https://developers.blend.com/blend/reference/get-verified-employers.md): Gets a summary of verified employers data for an Application
+- [Initiate Reverification of Employers](https://developers.blend.com/blend/reference/post-employers-reverify.md): Initiates an asynchronous attempt to reverify employers for the specified application and employers.
+- [Post a Home Lending Application](https://developers.blend.com/blend/reference/post-home-lending-application.md): Create a new application in Blend with minimal borrower and application data. This endpoint is usually used to create applications in Blend from CRMs or other central borrower databases.
+- [List Home Lending Applications](https://developers.blend.com/blend/reference/get-home-lending-applications.md): Get a paginated list of active applications sorted by creation date descending. This endpoint also supports a few filtering parameters.
+- [Patch Application Data](https://developers.blend.com/blend/reference/patch-application.md): Update properties on a specific loan.
+- [Get Application Data](https://developers.blend.com/blend/reference/get-application-data.md): Get application summary in JSON.
+- [Delete Application](https://developers.blend.com/blend/reference/delete-application-data.md): Delete an application
+- [Get Application Documents](https://developers.blend.com/blend/reference/get-application-documents.md): Get a list of all the uploaded and signature complete documents on a specific application, ordered by document creation date.
+- [List Borrower Positions on an Application](https://developers.blend.com/blend/reference/get-borrower-positions.md): Get the list of borrower pairs on the application
+- [Put Borrower Positions on an Application](https://developers.blend.com/blend/reference/put-borrower-positions.md): Update the location of borrowers on the application (by 1003/borrower pairing and location in the borrower pair)
+- [Post Export Status](https://developers.blend.com/blend/reference/post-export-status.md): Update export status on an application
+- [Post LOS Milestones](https://developers.blend.com/blend/reference/post-los-milestones.md): Bulk update a list of applications to be on specific los milestones
+- [Put a priced product on a loan](https://developers.blend.com/blend/reference/put-product-on-loan.md): Put a priced product on a loan
+- [Post Lender Take Over action on an Application](https://developers.blend.com/blend/reference/post-lender-take-over.md): Post Lender Take Over action on an Application
+- [Initiate Application Export](https://developers.blend.com/blend/reference/post-application-export.md): Initiate an asynchronous application export
+- [Get Multiple Export Requests](https://developers.blend.com/blend/reference/get-export-requests.md): Get all export requests for a given application
+- [Get Export Request By Id](https://developers.blend.com/blend/reference/get-export-request.md): Get a single export request for a given application
+- [Patch Export Request](https://developers.blend.com/blend/reference/patch-export-request.md): Patch the status of an export request
+- [Get Title Orders for an Application](https://developers.blend.com/blend/reference/get-title-orders-for-an-application.md): Looks up active Title orders. Only applicable for customers with Title Exchange enabled.
+- [Get Activities for an Application](https://developers.blend.com/blend/reference/get-application-activities.md): Get a paginated list of activities for a loan application
+- [Create a new scheduling record if not found else update the existing one](https://developers.blend.com/blend/reference/create-or-update-party-closing-schedule-details.md): This endpoint creates a closing appointment for a specified party for a closing/loan. The user needs to create a closing and set closingType, closingDate (scheduledCeremonyTime) and timezone to the closing. These fields can be added using `Update a Specific Closing` endpoint. The closing appointment will be linked to the closing using the applicationId, as there is one closing for a single loan.
+- [Get closing schedule details for a specified party on the loan](https://developers.blend.com/blend/reference/get-specific-party-closing-schedule-details.md): Returns closing schedule details for a specified party on the loan
+- [Get closing schedule details for all borrower parties on the loan](https://developers.blend.com/blend/reference/get-all-closing-schedule-details-for-the-loan.md): Returns closing schedule details for borrower parties on the loan
+- [Retrieve Basic Loan Data](https://developers.blend.com/blend/reference/get-loans-report.md): Return a paginated list of loans data.
+- [Retrieve Borrower Users](https://developers.blend.com/blend/reference/get-borrowers-report.md): Return a paginated list of borrower data.
+- [Retrieve Lender Users and usage metrics](https://developers.blend.com/blend/reference/get-lenders-report.md): Return a paginated list of lenders data.
+- [Retrieve Borrower Workflows](https://developers.blend.com/blend/reference/get-activities-report.md): This captures only the borrower's activity within Blend on the process-level.
+- [Retrieve NPS and Comments](https://developers.blend.com/blend/reference/get-nps-report.md): Return a paginated list of nps data.
+- [Retrieve Document Metadata](https://developers.blend.com/blend/reference/get-documents-report.md): Return a paginated list of documents data.
+- [Retrieve Connectivity Metrics](https://developers.blend.com/blend/reference/get-data-verification-usage-report.md): Returns a paginated list of connectivity metrics data.
+- [Retrieve Follow-ups data](https://developers.blend.com/blend/reference/get-follow-ups-report.md): Return a paginated list of individual follow-up data.
+- [Retrieve PAB activities](https://developers.blend.com/blend/reference/get-lender-pab-activities-report.md): Return a paginated list of PAB Activities
+- [Retrieve Deposit Account Application Data](https://developers.blend.com/blend/reference/get-deposit-account-applications.md): Return a paginated list of Deposit Account Applications
+- [Retrieve configurable products applications data](https://developers.blend.com/blend/reference/get-configurable-products-applications.md): Returns a paginated list of configurable products applications
+- [Retrieve configurable products application node instance data](https://developers.blend.com/blend/reference/get-configurable-products-application-node-instances.md): Returns a paginated list of page instances created/viewed by applicants, for applications created on the Blend configurable platform.
+- [Retrieve funding data](https://developers.blend.com/blend/reference/get-deposit-account-fundings.md): Returns a paginated list of funding objects created for transfering funds to a new  destination account booked using a Consumer Deposit Account application.
+- [Retrieve product data](https://developers.blend.com/blend/reference/get-deposit-account-products.md): Returns a paginated list of product or account objects added to a Consumer Deposit Account application. This includes products added to an application regardless of the outcome of the application (i.e unbooked products will be included)
+- [List Closings](https://developers.blend.com/blend/reference/get-closings.md): Returns a list of all closings for a given application.
+- [Create a Closing](https://developers.blend.com/blend/reference/post-closings.md): Creates a new closing for a given application.
+- [Upsert a closing for a given loan](https://developers.blend.com/blend/reference/put-closings.md): Update closing for a specific applicationId. A new closing is created if it does not exist.
+- [Get a Specific Closing](https://developers.blend.com/blend/reference/get-closing.md): Returns the specified closing.
+- [Update a Specific Closing](https://developers.blend.com/blend/reference/patch-closing.md): Updates a closing for a given loan. This endpoint can update multiple elements at once.
+- [Add or Update Closing Documents](https://developers.blend.com/blend/reference/put-closing-documents.md): Adds documents to a closing or updates their metadata, like their closing designation.
+- [Remove Closing Documents](https://developers.blend.com/blend/reference/delete-closing-documents.md): Remove documents from a closing.
+- [Create eNote for Closing](https://developers.blend.com/blend/reference/post-closing-enote.md): Creates an eNote for a closing.
+- [Remove the eNote from a Closing](https://developers.blend.com/blend/reference/delete-closing-enote.md): Removes the eNote from the Closing to make way for a paper note.
+- [Submit Closing](https://developers.blend.com/blend/reference/post-closing-send.md): Submits or Resubmits a closing.
+- [Initiate Closing Redraw](https://developers.blend.com/blend/reference/post-closing-redraw.md): Places submitted closing back into a draft state so that changes can be made.
+- [Add or Update Draft Pre-closing Documents](https://developers.blend.com/blend/reference/put-pre-closing-documents.md): Adds draft pre-closing documents to a closing or updates their document type if it has changed since their last addition. After successful completion of this request, the document references that were added to this closing will have a `closingDesignation` of `DRAFT_PRE_CLOSING` and a `sourceType` of `LENDER`. In addition, any pre-closing document references with a `sourceType` of `LENDER` that were previously sent to the settlement agent using the `POST close/closings/{id}/pre-closing-documents/send` endpoint will be automatically duplicated with a `closingDesignation` of `DRAFT_PRE_CLOSING`.
+- [Send or Re-Send Pre-Closing Documents](https://developers.blend.com/blend/reference/post-pre-closing-documents-send.md): Moves any pre-closing documents out of a draft state and sends them to the settlement agent.
+- [Add Externally Managed ENote](https://developers.blend.com/blend/reference/post-external-enote.md): Adds an ENote from a vault managed outside of blend.
+- [Retrieves full RON eligibility information for property address.](https://developers.blend.com/blend/reference/retrieve-full-ron-eligibility-object.md): Retrieves state, jurisdiction (county) and underwriter RON eligibility information for provided property address.
+- [Get all recording file IDs associated with an application](https://developers.blend.com/blend/reference/get-remote-online-notary-session-recording-file-ids.md): Returns an array of published file IDs for RON session video recording(s) associated with an application.
+- [Get download URL for RON session recording](https://developers.blend.com/blend/reference/get-remote-online-notary-session-recording-download-url-1.md): Returns a limited time URL to download the RON recording associated with a file ID.
+- [Get consumer lending application data](https://developers.blend.com/blend/reference/get-consumer-lending-application-data.md): Get consumer lending application data in JSON.
+- [Patch consumer lending application](https://developers.blend.com/blend/reference/patch-consumer-lending-application.md): Update some properties on a specific consumer lending application.
+- [List documents for a consumer lending application](https://developers.blend.com/blend/reference/get-consumer-lending-application-documents.md): Get a list of all the uploaded and signature complete documents on a specific application.
+- [Get application decision](https://developers.blend.com/blend/reference/get-application-decision.md): Get decision for a specific application.
+- [Set application decision](https://developers.blend.com/blend/reference/set-application-decision.md): Send decision information to Blend
+- [List of Party's Incomes verified.](https://developers.blend.com/blend/reference/get-verified-income-data.md): Get verified income data for a party.
+- [Performs income verification or reverification for a party.](https://developers.blend.com/blend/reference/post-income-verification.md): Based on the operation selected, this API runs through the income verification waterfall.
+- [Get the status of the income verification that was created through the POST /income/verifications API.](https://developers.blend.com/blend/reference/get-income-verification-status.md): Get status of income verification.
+- [Create OAuth Token](https://developers.blend.com/blend/reference/create-oauth-token.md): Creates a new OAuth Token for use in authenticating requests given a client ID and password
+- [Get Current User](https://developers.blend.com/blend/reference/get-current-user.md): Get Current User
+- [Get Documents](https://developers.blend.com/blend/reference/get-documents.md): Get a paginated list of documents
+- [Post Document](https://developers.blend.com/blend/reference/post-document.md): Upload a loan document
+- [Get Document Data](https://developers.blend.com/blend/reference/get-document.md): Download document
+- [Update a Document's Export Status](https://developers.blend.com/blend/reference/patch-document-data.md): Upate a document's export status
+- [List Document Export Statuses](https://developers.blend.com/blend/reference/get-document-export-statuses.md): Get all export statuses of the document
+- [Get Document Metadata](https://developers.blend.com/blend/reference/get-document-metadata.md): Get all metadata associated with a document
+- [List Follow-Ups for an Application](https://developers.blend.com/blend/reference/get-follow-ups.md): Get follow-ups on a specific application.
+- [Add a Follow-Up to an Application](https://developers.blend.com/blend/reference/post-follow-up.md): Create a follow-up for an applicant on a specific application.
+- [Get a Specific Follow-Up](https://developers.blend.com/blend/reference/get-follow-up.md): Get specific follow-up.
+- [Remove a Specific Follow-Up](https://developers.blend.com/blend/reference/remove-a-specific-follow-up.md): Delete specific follow-up.
+- [Update a Specific Follow-Up](https://developers.blend.com/blend/reference/patch-follow-up.md): Update specific follow-up.
+- [Get Assets from an Application](https://developers.blend.com/blend/reference/get-assets.md): Gets a summary of Assets data for an Application
+- [Initiate Refresh of Assets data](https://developers.blend.com/blend/reference/post-assets-refresh.md): Initiates an asynchronous attempt to refresh Assets data for the specified application and accounts. Refreshes can only be initiated once per hour for an application. Refreshes can take up to 20 minutes to complete.
+- [Gets Tax Transcripts structured data for a particular 4506T document](https://developers.blend.com/blend/reference/get-tax-transcripts.md): Gets Tax Transcripts structured data for a particular 4506T document
+- [Create Lenders in Blend](https://developers.blend.com/blend/reference/post-lenders.md): Bulk route used to create Lender Users in Blend
+- [List Lenders in Blend](https://developers.blend.com/blend/reference/query-lenders.md): Get a paginated list of all Lender Users in the Blend account
+- [Remove Lenders in Blend](https://developers.blend.com/blend/reference/delete-lenders.md): Bulk endpoint to remove one or more lender users from the Blend account
+- [Update Lenders in Blend](https://developers.blend.com/blend/reference/patch-lenders.md): Bulk endpoint to update some information on an array of lender users
+- [Post Parties](https://developers.blend.com/blend/reference/post-parties.md): Add a party to a specific loan. You can only add third party recipients through this endpoint.
+- [Patch Party](https://developers.blend.com/blend/reference/patch-party.md): Update a party's details.
+- [Delete Party](https://developers.blend.com/blend/reference/delete-party.md): Delete party from a specific loan.
+- [List a Party's Employers](https://developers.blend.com/blend/reference/get-party-employers.md): Get details about party employers.
+- [Post Party Employers](https://developers.blend.com/blend/reference/post-party-employers.md): Create employers and incomes for party.
+- [Post Party Other Incomes](https://developers.blend.com/blend/reference/post-party-other-incomes.md): Create other incomes for party.
+- [Post Realtor](https://developers.blend.com/blend/reference/post-realtor.md): Add realtor to loan application
+- [Get Account Opening Application Data](https://developers.blend.com/blend/reference/get-account-opening-application-data.md): Get JSON object containing application data for account opening.
+- [Patch Account Opening Application](https://developers.blend.com/blend/reference/patch-account-opening-application.md): Update application data.
+- [Get Login Attempts](https://developers.blend.com/blend/reference/get-login-attempts.md): Get a paginated list of login attempts. Only applicable to consumer SSO login attempts.
+- [Get a Specific Login Attempt](https://developers.blend.com/blend/reference/get-login-attempt.md): Get a specific login attempt. Only applicable to consumer SSO login attempts.
+- [Post a package](https://developers.blend.com/blend/reference/post-a-package.md): Post a package to an application.
+- [Retrieve all packages](https://developers.blend.com/blend/reference/retrieve-all-packages-for-an-application.md): Retrieve all packages for an application. Optional query parameters available to filter.
+- [Issue a draft package or retry issuing a package](https://developers.blend.com/blend/reference/issue-a-draft-package-or-retry-issuing-a-package.md): Issue a draft package or retry issuing a package
+- [Retrieve a single package](https://developers.blend.com/blend/reference/retrieve-a-package.md): Retrieve details about a package
+- [Update a package](https://developers.blend.com/blend/reference/update-a-package.md): Update a package to CANCELLED status, set a papered at date, set/update a due date or set/update a expiry date
+- [Mark external signatures as complete for a package](https://developers.blend.com/blend/reference/markpackageexternalsignaturescomplete.md): Records that document signatures have been collected externally for a package. Marks all recipients in the external fulfillment envelope as signed. This is idempotent and can be called multiple times safely.  **Use case:** Integration with external closing services like Accurate Group for traditional (wet-sign) closings. After the settlement agent uploads signed closing documents to the package, this endpoint is called to indicate that signatures have been collected in person with a notary.
+- [Get Events](https://developers.blend.com/blend/reference/get-events.md): Returns a list of events for the given query parameters with a maximum of 250 events per call.
+- [Get Event](https://developers.blend.com/blend/reference/get-event.md): Get an event and its current status
+- [Set Event Status](https://developers.blend.com/blend/reference/set-event-status.md): Set a status for an event
+- [Get Event Description](https://developers.blend.com/blend/reference/get-event-description.md): Get the set of all events available in the provided version, their available decorators, and optionally their schemas.
+
+## Changelog
+- [v12.0.0](https://developers.blend.com/blend/changelog/v1200.md)
+- [v11.0.0](https://developers.blend.com/blend/changelog/v1100.md)
+- [v10.0.0](https://developers.blend.com/blend/changelog/v1000.md)
+- [v9.0.0](https://developers.blend.com/blend/changelog/v900.md)
+- [v8.0.0](https://developers.blend.com/blend/changelog/v800.md)
+

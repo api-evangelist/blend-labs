@@ -1,0 +1,76 @@
+generated: '2026-07-18'
+method: derived
+source: llms/blend-labs-llms.txt
+note: >-
+  Entity graph derived from the published Blend API reference operation catalog (endpoint
+  paths and titles). Relationships reflect the resource hierarchy documented in the
+  reference; not derived from a machine-readable OpenAPI schema (portal spec is served
+  via a ReadMe SPA and not cleanly downloadable).
+entities:
+- name: Application
+  aka: [Loan, Home Lending Application, Consumer Lending Application, Deposit Account Application, Account Opening Application]
+  description: The central lending/account-opening record. Home lending, consumer lending, and deposit/account-opening variants.
+  relationships:
+  - has_many: Party
+    via: parties
+  - has_many: Document
+    via: documents
+  - has_many: Closing
+    via: closings
+  - has_many: Activity
+    via: activities
+  - has_many: FollowUp
+    via: follow-ups
+  - has_many: ExportRequest
+    via: export-requests
+  - has_one: LosMilestone
+    via: los-milestone
+  - has_one: IntentToProceed
+    via: intent-to-proceed
+  - has_many: UnderwritingResult
+    via: underwriting-results
+  - has_many: TitleOrder
+    via: title-orders
+- name: Party
+  description: A person on an application (borrower or third-party recipient), with employers, incomes, and econsent status.
+  relationships:
+  - belongs_to: Application
+  - has_many: Employer
+    via: employers
+  - has_many: Income
+    via: other-incomes / verified-income
+  - has_one: ClosingSchedule
+    via: closing-schedule-details
+- name: Closing
+  description: An electronic loan closing for an application, including eNote, packages, and RON eligibility/recordings.
+  relationships:
+  - belongs_to: Application
+  - has_many: Document
+    via: closing-documents
+  - has_one: ENote
+    via: enote
+  - has_many: PreClosingDocument
+    via: pre-closing-documents
+- name: Package
+  description: A document package on an application (issue, retrieve, cancel, mark external signatures complete).
+  relationships:
+  - belongs_to: Application
+- name: Document
+  description: An uploaded/signature-complete loan document with metadata and export statuses.
+  relationships:
+  - belongs_to: Application
+- name: Event
+  description: An asynchronous event notification for lifecycle state changes.
+  relationships:
+  - belongs_to: Application
+- name: FollowUp
+  description: A follow-up item for an applicant on an application.
+  relationships:
+  - belongs_to: Application
+- name: Lender
+  description: A lender user in the Blend account (bulk create/query/update/remove).
+- name: Verification
+  aka: [Employers, Assets, Income, TaxTranscripts]
+  description: Verification-of-asset/employment/income (VOA/VOE/VOI) and tax transcript data attached to an application/party.
+  relationships:
+  - belongs_to: Application

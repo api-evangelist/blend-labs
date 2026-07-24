@@ -1,22 +1,129 @@
 aid: blend-labs
 name: Blend Labs
-description: Blend Labs is a company surfaced as a portfolio company of a16z and added to the API Evangelist
-  network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: >-
+  Blend Labs, Inc. (NYSE: BLND) is a cloud banking platform, founded in 2012 and
+  headquartered in the San Francisco Bay Area, that powers digital lending and account
+  opening for banks, credit unions, and mortgage lenders. The Blend API lets integrators
+  drive the full home-lending lifecycle — creating and exporting mortgage applications
+  (with MISMO 3.3.1 and Fannie 3.2 export), managing parties, documents and disclosures,
+  e-signature packages, and electronic/RON closings — as well as consumer lending,
+  deposit account opening, verification of income/employment/assets, tax transcripts,
+  lender user management, reporting, and event notifications. Requests authenticate with
+  an OAuth token, HTTP bearer, or basic credentials plus a mandatory blend-target-instance
+  tenant header, against production (api.blendlabs.com) or beta (api.beta.blendlabs.com).
 url: https://raw.githubusercontent.com/api-evangelist/blend-labs/refs/heads/main/apis.yml
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://cdn.readme.io/og-image/create?type=home&title=Blend%20API%20Docs&projectTitle=Blend%20API%20Docs
 x-type: company
 x-source: vc-portfolio
 x-backed-by:
 - a16z
-x-tier: stub
-x-tier-reason: portfolio-lead
+x-tier: profiled
+x-tier-reason: enrichment-pipeline
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-18'
 tags:
 - Company
-apis: []
+- Financial Services
+- Mortgage
+- Lending
+- Banking
+- Digital Banking
+- Fintech
+- Account Opening
+- Mortgage Technology
+- Consumer Lending
+- Deposit Accounts
+- Verification
+- eClosing
+apis:
+- name: Blend API
+  description: >-
+    Blend's platform API for home lending, consumer lending, deposit account opening,
+    documents and disclosures, e-signature packages, electronic and remote online notary
+    (RON) closings, verification of income/employment/assets, reporting, and event
+    notifications. Multi-tenant: every request carries a blend-target-instance header.
+  humanURL: https://developers.blend.com/blend/reference
+  baseURL: https://api.blendlabs.com
+  tags:
+  - Mortgage
+  - Lending
+  - Banking
+  - Closings
+  - Documents
+  - Verification
+  - Events
+  properties:
+  - type: OpenAPI
+    url: https://developers.blend.com/blend/openapi
+  - type: APIReference
+    url: https://developers.blend.com/blend/reference
+  - type: Authentication
+    url: authentication/blend-labs-authentication.yml
+  - type: Conventions
+    url: conventions/blend-labs-conventions.yml
+  - type: DataModel
+    url: data-model/blend-labs-data-model.yml
+  - type: ErrorCatalog
+    url: errors/blend-labs-problem-types.yml
+  - type: MCPServer
+    url: mcp/blend-labs-mcp.yml
+  - type: Conformance
+    url: conformance/blend-labs-conformance.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+common:
+- type: DomainSecurity
+  url: security/blend-labs-domain-security.yml
+- type: DeveloperPortal
+  url: https://developers.blend.com/
+- type: Documentation
+  url: https://developers.blend.com/blend/docs
+- type: APIReference
+  url: https://developers.blend.com/blend/reference
+- type: GettingStarted
+  url: https://developers.blend.com/blend/docs
+- type: Support
+  url: https://help.blend.com/
+- type: StatusPage
+  url: https://status.blend.com/
+- type: ChangeLog
+  url: changelog/blend-labs-changelog.yml
+- type: Deprecation
+  url: https://developers.blend.com/blend/changelog
+- type: Website
+  url: https://blend.com/
+- type: SignUp
+  url: https://blend.com/contact/
+- type: Pricing
+  url: https://blend.com/contact/
+- type: LLMsTxt
+  url: llms/blend-labs-llms.txt
+- type: Lifecycle
+  url: lifecycle/blend-labs-lifecycle.yml
+- type: Webhooks
+  url: asyncapi/blend-labs-events-webhooks.yml
+- type: Sandbox
+  url: sandbox/blend-labs-sandbox.yml
+- type: WellKnown
+  url: well-known/blend-labs-well-known.yml
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence

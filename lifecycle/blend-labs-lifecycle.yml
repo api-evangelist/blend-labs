@@ -1,0 +1,26 @@
+generated: '2026-07-18'
+method: searched
+source: https://developers.blend.com/blend/changelog
+versioning:
+  scheme: semantic-major
+  current: v12.0.0
+  latest_published: v13.0.0
+  history: v1.3.0 through v13.0.0
+  docs: https://developers.blend.com/blend/changelog
+deprecation:
+  policy: >-
+    Blend publishes dated major-version upgrade guides and end-of-support deadlines for
+    prior major versions (e.g. v2.X.X support ended 2020-10-31 alongside the mandatory
+    blend-target-instance header migration). Breaking changes ship in new major versions.
+  policy_url: https://developers.blend.com/blend/changelog
+  upgrade_guides:
+  - https://developers.blend.com/blend/docs/v800-upgrade-guide
+  - https://developers.blend.com/blend/docs/v900-upgrade-guide
+  - https://developers.blend.com/blend/docs/v1000-upgrade-guide
+status_page: https://status.blend.com/
+support: https://help.blend.com/
+environments:
+- name: production
+  base_url: https://api.blendlabs.com
+- name: beta
+  base_url: https://api.beta.blendlabs.com
