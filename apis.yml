@@ -36,6 +36,20 @@ created: '2026-07-17'
 modified: '2026-07-18'
 tags:
 - Company
+- Financial-Services
+- Mortgage
+- Lending
+- Banking
+- Digital Banking
+- Fintech
+- Account Opening
+- Mortgage Technology
+- Consumer Lending
+- Deposit Accounts
+- Verification
+- eClosing
+tags_raw:
+- Company
 - Financial Services
 - Mortgage
 - Lending
@@ -58,6 +72,14 @@ apis:
   humanURL: https://developers.blend.com/blend/reference
   baseURL: https://api.blendlabs.com
   tags:
+  - Mortgage
+  - Lending
+  - Banking
+  - Closings
+  - Documents
+  - Verification
+  - Event
+  tags_raw:
   - Mortgage
   - Lending
   - Banking
